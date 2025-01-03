@@ -1,6 +1,6 @@
 {
-  "name": "drizzle_app",
-  "version": "1.0.0",
+  "name": "url_shortner",
+  "version": "0.0.1",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
@@ -17,8 +17,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "type-check": "tsc --noEmit",
+    "dev": "tsx watch src/index.ts",
     "start": "tsx watch src/main.ts",
-    "build": "pkgroll"
+    "build": "pkgroll",
+    "migrate": "node-pg-migrate"
   },
   "keywords": [],
   "author": "",
@@ -26,8 +28,13 @@
   "description": "",
   "devDependencies": {
     "@types/node": "^22.10.2",
+    "node-pg-migrate": "^7.8.0",
     "pkgroll": "^2.6.0",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "pg": "^8.13.1"
   }
 }
