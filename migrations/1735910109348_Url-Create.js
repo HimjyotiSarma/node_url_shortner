@@ -12,15 +12,15 @@ exports.up = (pgm) => {
   pgm.sql(
     `
             CREATE TYPE timevalue AS (
-                timestamp TIMESTAMP WITH TIMEZONE
+                timestamp TIMESTAMP
             );
 
             CREATE TABLE url (
                 short_url VARCHAR(20) PRIMARY KEY NOT NULL UNIQUE,
                 redirect_url VARCHAR(100) NOT NULL,
                 visited_history timevalue[],
-                created_at TIMESTAMP WITH TIMEZONE DEFAULT CURRENT_TIMESTAMP,
-                updated-at TIMESTAMP WITH TIMEZONE DEFAULT CURRENT_TIMESTAMP
+                created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+                updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
             );
         `
   );
@@ -33,7 +33,7 @@ exports.up = (pgm) => {
  */
 exports.down = (pgm) => {
   pgm.sql(`
-        DROP TYPE IF EXIST timevalue;
-        DROP TABLE IF EXIST url;
+        DROP TYPE IF EXISTS timevalue;
+        DROP TABLE IF EXISTS url;
     `);
 };
