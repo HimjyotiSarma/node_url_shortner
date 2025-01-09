@@ -4,6 +4,7 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.cts",
+  "type": "module",
   "exports": {
     "require": {
       "types": "./dist/index.d.cts",
@@ -27,14 +28,22 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@types/node": "^22.10.2",
+    "@types/cookie-parser": "^1.4.8",
+    "@types/cors": "^2.8.17",
+    "@types/node": "^22.10.5",
+    "@types/pg": "^8.11.10",
     "node-pg-migrate": "^7.8.0",
     "pkgroll": "^2.6.0",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   },
   "dependencies": {
+    "@types/express": "^5.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nanoid": "^5.0.9",
     "pg": "^8.13.1"
   }
 }
